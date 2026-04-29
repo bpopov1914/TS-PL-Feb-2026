@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 import PageFactory from '@tests/pages/Page.factory';
 
+/* 
+  Page Object Model Example improved with Page Factory:
+*/
+
 let pageFactory: PageFactory;
 
 test.beforeEach(async ({ page }) => {

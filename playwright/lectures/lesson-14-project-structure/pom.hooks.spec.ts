@@ -2,6 +2,10 @@ import { test, expect } from '@playwright/test';
 import LoginPage from '@tests/pages/Login.page';
 import LandingPage from '@tests/pages/Landing.page';
 
+/* 
+  Page Object Model Example improved with hooks:
+*/
+
 let loginPage: LoginPage;
 let landingPage: LandingPage;
 

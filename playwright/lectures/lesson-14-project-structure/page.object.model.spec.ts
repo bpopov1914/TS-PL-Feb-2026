@@ -2,6 +2,10 @@ import { test, expect } from '@playwright/test';
 import LoginPage from '@tests/pages/Login.page';
 import LandingPage from '@tests/pages/Landing.page';
 
+/* 
+  Basic Page Object Model Example
+*/
+
 test.describe('PoM Basic', { tag: ['@suite', '@smoke', '@regression'] }, () => {
   test.use({ baseURL: 'https://st2016.inv.bg' });
 

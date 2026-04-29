@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 
+/*
+  Grouping test scenarios for common configuration: https://playwright.dev/docs/api/class-test#test-describe
+*/
+
 test.describe('Test Suite #1', { tag: ['@suite', '@smoke', '@regression'] }, () => {
   test.use({ baseURL: 'https://st2016.inv.bg' });
 

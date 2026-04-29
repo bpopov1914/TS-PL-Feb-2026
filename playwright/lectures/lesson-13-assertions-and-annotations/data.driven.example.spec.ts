@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 
+/* 
+  How to Parameterize tests: https://playwright.dev/docs/test-parameterize
+*/
+
 [
   {
     scenario: 'empty username',

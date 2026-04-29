@@ -9,14 +9,15 @@ import { test, expect } from '@playwright/test';
 // test.describe() - creates a group of tests like a test suite. Can have nested subgroups.
 // test.describe.skip - can skip whole test suites
 // test.describe.parallel() - creates a test suite that forces execution of tests within in parallel
-// test.use({ colorScheme: 'dark' }); - set gropup specific scenario configurations
-// tags - at suite and scenario levels
-// test.step() - creates a test step which can contain multiple actions for better reporting
-// tet.only (run only this test, used for development purposes)
-// test.skip() - creates a test that will be skipped (can be added inside a test with condition)
-// test.fixme (+ comment bug:#)
-// test.slow(); (triple default timeout)
-// test.fail(); (check for false possitve)
+// test.use({ colorScheme: 'dark' }); - set group specific scenario configurations, used in test.desribe block
+// tags - set at suite and scenario levels, used for easier scenario subgroup execution
+// test.step() - creates a test step which can contain multiple actions and assertions, used for better reporting
+// tet.only - run only this test and ignore all who dont have this, used for development purposes
+// test.skip() - marks a test to be skipped in test execution, used to disable tests, can be added inside a test with condition
+// test.fixme - put at a spot to stop test execution of that particualr scenario at this point, used when scenarios work only partially due to changes or bugs, can have comments too
+// test.slow(); - force triple default timeout for this scenario or suite
+// test.fail(); - force scenario failure, used to check for false possitves
+// test.pause(); - adds a breakpoint, pausing test execution and entering debug mode
 
 test.describe('Test Suite #1', { tag: ['@suite', '@smoke', '@regression'] }, () => {
   test.use({ baseURL: 'https://st2016.inv.bg', colorScheme: 'light'});

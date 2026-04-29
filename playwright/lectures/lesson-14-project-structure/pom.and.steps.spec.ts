@@ -1,5 +1,9 @@
 import { test } from '@tests/steps/step.factory';
 
+/* 
+  Final Page Object Model Example improved with reusable Step Definitions:
+*/
+
 test(
   'Navigate to New Invoice Page',
   { tag: ['@ui', '@invoice'] },
