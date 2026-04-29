@@ -1,4 +1,4 @@
-// create the below 2 test scenarios
+// create the below 2 test scenarios and put them in a test suite
 // put all groups of actions into a test.step
 // use soft assertions, unless we are assrting a navigation has taken place
 // try to add meaningful comments to all assertions
@@ -39,11 +39,11 @@
 // assert succesful naviation
 
 // In Playwright Practice session group 1. getByRole() Locators pick a locator from section Navigation and click on it.
-// assert navigation has taken place (url has changed)
+// assert navigation has taken place
 
-// In Playwright Practice session group 2. getByText() Locators pick one of the paragraphs with colored text and assert is color
+// In Playwright Practice session group 2. getByText() Locators pick one of the paragraphs with colored text and assert its color
 
-// In Playwright Practice session group 3. getByLabel() Locators Locators click the unchecked radio button
+// In Playwright Practice session group 3. getByLabel() Locators Locators check the unchecked radio button
 // assert is is checked now
 
 // In Playwright Practice session group 4. getByPlaceholder() Locators pick an input fill and assert it is editable

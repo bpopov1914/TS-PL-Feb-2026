@@ -35,7 +35,7 @@ test.describe('Test Suite #1', { tag: ['@suite', '@smoke', '@regression'] }, () 
       await expect(page).toHaveTitle('Система за фактуриране - QA Ground');
     });
 
-    await test.step('Navigate New Invoice Page', async () => {
+    await test.step('Navigate Clients Page', async () => {
       await page.getByRole('link', { name: 'Клиенти', exact: true }).click();
       await expect(page).toHaveTitle('Клиенти - QA Ground');
     });
@@ -54,7 +54,7 @@ test.describe('Test Suite #1', { tag: ['@suite', '@smoke', '@regression'] }, () 
       await expect(page).toHaveTitle('Система за фактуриране - QA Ground');
     });
 
-    await test.step('Navigate New Invoice Page', async () => {
+    await test.step('Navigate to Articles Page', async () => {
       await page.getByRole('link', { name: 'Артикули', exact: true }).click();
       await expect(page).toHaveTitle('Управление на артикули - QA Ground');
     });
