@@ -72,10 +72,10 @@ test('Locator Examples', async ({ page }) => {
     .click();
 
   // counts all elements found by locator
-  // console.log(await page.locator('//*[contains(@class, "selenium")]').count());
+  console.log(await page.locator('//*[contains(@class, "selenium")]').count());
 
   // find all elements: ignores unique constrain and returns a list of found elements:
-  // console.log((await page.locator('//*[contains(@class, "selenium")]').all()).toString());
+  console.log((await page.locator('//*[contains(@class, "selenium")]').all()).toString());
 
   // use as last resort
   // find first element
