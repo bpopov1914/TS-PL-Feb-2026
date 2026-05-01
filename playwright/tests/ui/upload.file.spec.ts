@@ -21,7 +21,7 @@ import { Credentials } from '@tests/resourses/enums/Credentials';
     filename: 'empty.pdf',
   },
 ].forEach(({ scenario, username, password, filename }) => {
-  test.only(
+  test(
     `Upload Document File Type: ${scenario}`,
     {
       tag: ['@ui', '@login', '@negative'],
