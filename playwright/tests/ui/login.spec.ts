@@ -65,14 +65,14 @@ import { faker } from '@faker-js/faker';
   },
   {
     scenario: 'empty password',
-    username: faker.internet.email(),
+    username: faker.internet.email(), // using faker to generate a new random e-mail for negative scenario each execution
     password: '',
     errorMessage: 'Моля, попълнете вашата парола',
   },
   {
     scenario: 'wrong password',
     username: 'karamfilovs@gmail.com',
-    password: faker.internet.password(),
+    password: faker.internet.password(), // using faker to generate a new random password for negative scenario each execution
     errorMessage: 'Грешно потребителско име или парола. Моля, опитайте отново.',
   },
 ].forEach(({ scenario, username, password, errorMessage }) => {
