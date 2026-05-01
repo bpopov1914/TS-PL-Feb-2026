@@ -3,6 +3,7 @@
 /.vscode/
 /.github/
 /node_modules/
+secrets.ts
 
 # Playwright
 /test-results/

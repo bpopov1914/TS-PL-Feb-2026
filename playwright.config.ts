@@ -22,7 +22,7 @@ export default defineConfig({
   reporter: [['html', { open: 'failure' }]],
 
   /* Output directory for test artifacts */
-  outputDir: './test-results/',  // this is default folder
+  outputDir: './test-results/', // this is default folder
 
   /* Set up regex to recognize files with tests by their name */
   // testMatch: '.*(test|spec).(js|ts)', // default is contain 'spec' and end with '.ts'
@@ -51,7 +51,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'https://playwright.dev/',
+    baseURL: 'https://st2016.inv.bg/login/',
 
     /* Browser Mode */
     headless: false, // default is headless
@@ -80,7 +80,7 @@ export default defineConfig({
 
     /* Activates slow motion exectution in headed mode */
     launchOptions: {
-      slowMo: 1000,
+      slowMo: 1250,
     },
   },
 
