@@ -8,22 +8,29 @@ export default class LandingSteps extends PageFactory {
 
   async navigateToNewInvoicePage() {
     await test.step('Navigate New Invoice Page', async () => {
-      await this.page.getByRole('link', { name: 'Нова Фактура', exact: true }).click();
+      await this.landingPage.NEW_INVOICE_PAGE_LINK.click();
       await expect(this.page).toHaveTitle('Нова фактура - QA Ground');
     });
   }
 
   async navigateToClientsPage() {
     await test.step('Navigate to Clients Page', async () => {
-      await this.page.getByRole('link', { name: 'Клиенти', exact: true }).click();
+      await this.landingPage.CLIENTS_PAGE_LINK.click();
       await expect(this.page).toHaveTitle('Клиенти - QA Ground');
     });
   }
 
   async navigateToArticlesPage() {
     await test.step('Navigate to Articles Page', async () => {
-      await this.page.getByRole('link', { name: 'Артикули', exact: true }).click();
+      await this.landingPage.NEW_ARTICLES_PAGE_LINK.click();
       await expect(this.page).toHaveTitle('Управление на артикули - QA Ground');
     });
+  }
+
+  async navigateToDocumentsPage() {
+    await test.step('Navigate to Documents Page', async () => {
+      await this.landingPage.DOCUMENTS_PAGE_LINK.click();
+      await expect(this.page).toHaveTitle(this.documentPage.TITLE);
+    })
   }
 }
