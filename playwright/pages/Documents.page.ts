@@ -34,6 +34,7 @@ export default class DocumentsPage extends BasePage {
     this.DELETE_FILE_BUTTON = this.page.getByRole('link', { name: 'Изтрий' });
   }
 
+  // this does the same as the arrow method above DOCUMENT_CHECKBOX
   //   documentCheckbox(filename: string) {
   //     return this.page
   //       .getByRole('row', {

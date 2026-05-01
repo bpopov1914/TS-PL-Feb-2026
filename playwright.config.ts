@@ -51,7 +51,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'https://st2016.inv.bg/login/',
+    // baseURL: 'https://st2016.inv.bg/login/',
 
     /* Browser Mode */
     headless: false, // default is headless

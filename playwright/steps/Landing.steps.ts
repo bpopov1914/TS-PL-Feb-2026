@@ -9,28 +9,30 @@ export default class LandingSteps extends PageFactory {
   async navigateToNewInvoicePage() {
     await test.step('Navigate New Invoice Page', async () => {
       await this.landingPage.NEW_INVOICE_PAGE_LINK.click();
-      await expect(this.page).toHaveTitle('Нова фактура - QA Ground');
+      await expect(this.page, 'Verify page title').toHaveTitle('Нова фактура - QA Ground');
     });
   }
 
   async navigateToClientsPage() {
     await test.step('Navigate to Clients Page', async () => {
       await this.landingPage.CLIENTS_PAGE_LINK.click();
-      await expect(this.page).toHaveTitle('Клиенти - QA Ground');
+      await expect(this.page, 'Verify page title').toHaveTitle('Клиенти - QA Ground');
     });
   }
 
   async navigateToArticlesPage() {
     await test.step('Navigate to Articles Page', async () => {
       await this.landingPage.NEW_ARTICLES_PAGE_LINK.click();
-      await expect(this.page).toHaveTitle('Управление на артикули - QA Ground');
+      await expect(this.page, 'Verify page title').toHaveTitle(
+        'Управление на артикули - QA Ground',
+      );
     });
   }
 
   async navigateToDocumentsPage() {
     await test.step('Navigate to Documents Page', async () => {
       await this.landingPage.DOCUMENTS_PAGE_LINK.click();
-      await expect(this.page).toHaveTitle(this.documentPage.TITLE);
-    })
+      await expect(this.page, 'Verify page title').toHaveTitle(this.documentPage.TITLE);
+    });
   }
 }

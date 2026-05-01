@@ -9,7 +9,7 @@ export default class SharedSteps extends PageFactory {
   async navigateToSite(url: string) {
     await test.step('Navigate to Site', async () => {
       await this.page.goto(url);
-      await expect(this.page).toHaveTitle(this.loginPage.TITLE);
+      await expect(this.page, 'Verify page title').toHaveTitle(this.loginPage.TITLE);
     });
   }
 
@@ -22,7 +22,7 @@ export default class SharedSteps extends PageFactory {
       } else {
         await this.loginPage.PASSWORD_INPUT.press('Enter');
       }
-      await expect(this.page).toHaveTitle(this.landingPage.TITLE);
+      await expect(this.page, 'Verify page title').toHaveTitle(this.landingPage.TITLE);
     });
   }
 
@@ -31,7 +31,7 @@ export default class SharedSteps extends PageFactory {
       await this.loginPage.EMAIL_INPUT.fill(username);
       await this.loginPage.PASSWORD_INPUT.fill(password);
       await this.loginPage.LOGIN_BUTTON.click();
-      await expect(this.loginPage.ERROR_MESSAGE).toContainText(errorMessage);
+      await expect(this.loginPage.ERROR_MESSAGE, 'Verify login error message').toContainText(errorMessage);
     });
   }
 }
