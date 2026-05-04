@@ -15,28 +15,28 @@ test.describe('Homework 06 test scenario 1', { tag: '@hw-6-1' }, () => {
     await test.step('Fill autocomplete with text', async () => {
       await page.locator('#autocomplete').fill('Bulgaria');
       await page.locator('.ui-menu-item').first().click();
-      await expect(page.locator('#autocomplete'), "Verify the input value is 'Bulgaria'").toHaveValue('Bulgaria');
+      await expect.soft(page.locator('#autocomplete'), "Verify the input value is 'Bulgaria'").toHaveValue('Bulgaria');
     });
 
     await test.step('Select option 2 from dropdown', async () => {
       await page.locator('#dropdown-class-example').selectOption('option2');
-      await expect(page.locator('#dropdown-class-example'), "Verify the selected option is 'option2'").toHaveValue('option2');
+      await expect.soft(page.locator('#dropdown-class-example'), "Verify the selected option is 'option2'").toHaveValue('option2');
     });
 
     await test.step('Check checkbox #3', async () => {
       await page.locator('#checkBoxOption3').check();
-      await expect(page.locator('#checkBoxOption3'), "Verify checkbox #3 is checked").toBeChecked();
+      await expect.soft(page.locator('#checkBoxOption3'), "Verify checkbox #3 is checked").toBeChecked();
     });
 
     await test.step('Click on "Hide" button', async () => {
       await page.locator('#hide-textbox').click();
-      await expect(page.locator('#displayed-text'), "Verify the input element is now hidden").toBeHidden();
+      await expect.soft(page.locator('#displayed-text'), "Verify the input element is now hidden").toBeHidden();
     });
 
     await test.step('Hover over "Mouse Hover" element', async () => {
       await page.locator('#mousehover').hover();
-      await expect(page.locator('.mouse-hover-content'), "Verify mouse hover content is visible").toBeVisible();
-      await expect(page.locator('.mouse-hover-content a:has-text("Top")'), "Verify top link is visible").toBeVisible();
+      await expect.soft(page.locator('.mouse-hover-content'), "Verify mouse hover content is visible").toBeVisible();
+      await expect.soft(page.locator('.mouse-hover-content a:has-text("Top")'), "Verify top link is visible").toBeVisible();
     });
   });
 });
