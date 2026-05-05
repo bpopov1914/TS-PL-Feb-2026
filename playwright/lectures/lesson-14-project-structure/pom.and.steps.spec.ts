@@ -1,4 +1,4 @@
-import { test } from '@tests/steps/step.factory';
+import { test } from '@tests/steps/fixtures';
 
 /* 
   Final Page Object Model Example improved with reusable Step Definitions set up in Fixtures, test.describe is no longer needed when we use fixtures:

@@ -20,7 +20,7 @@ export default class DocumentsSteps extends PageFactory {
   async uploadFile(filename: string) {
     await test.step('Upload File', async () => {
       await this.documentPage.CHOOSE_FILE_BUTTON.setInputFiles(
-        path.join(__dirname, '..', 'resourses', 'files', filename),
+        path.join(__dirname, '..', '..', 'lib', 'resourses', 'files', filename),
       );
       await this.documentPage.CREATE_BUTTON.click();
       await expect(this.documentPage.MESSAGE_BOX, 'Verify upload success message').toHaveText(

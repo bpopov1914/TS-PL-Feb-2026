@@ -81,7 +81,6 @@ export default defineConfig({
     /* Activates slow motion exectution in headed mode */
     // launchOptions: {
     //   slowMo: 1250,
-    
   },
 
   /* Configure projects for major browsers */
@@ -117,8 +116,15 @@ export default defineConfig({
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
     {
+      name: 'generateToken',
+      testDir: './playwright/tests/api',
+      testMatch: /generate\.token\.ts/,
+      use: {},
+    },
+    {
       name: 'Google Chrome',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      dependencies: ['generateToken'],
     },
   ],
 

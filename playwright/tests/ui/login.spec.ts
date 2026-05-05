@@ -1,5 +1,5 @@
-import { test } from '@tests/steps/step.factory';
-import { Credentials } from '@tests/resourses/enums/Credentials';
+import { test } from '@tests/steps/fixtures';
+import { Credentials } from '@lib/resourses/enums/Credentials';
 import { faker } from '@faker-js/faker';
 
 // faker documentation: https://fakerjs.dev/guide/usage.html
@@ -9,14 +9,14 @@ import { faker } from '@faker-js/faker';
   // scenario 1:
   {
     scenario: 'Admin user',
-    email: Credentials.EMIAL,
+    email: Credentials.EMAIL,
     password: Credentials.PASSWORD,
     usingEnterKey: false,
   },
   // scenario 2
   {
     scenario: 'Admin user with Enter Key',
-    email: Credentials.EMIAL,
+    email: Credentials.EMAIL,
     password: Credentials.PASSWORD,
     usingEnterKey: true,
   },

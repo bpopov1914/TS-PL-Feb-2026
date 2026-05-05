@@ -1,22 +1,22 @@
-import { test } from '@tests/steps/step.factory';
-import { Credentials } from '@tests/resourses/enums/Credentials';
+import { test } from '@tests/steps/fixtures';
+import { Credentials } from '@lib/resourses/enums/Credentials';
 
 [
   {
     scenario: '.doc',
-    username: Credentials.EMIAL,
+    username: Credentials.EMAIL,
     password: Credentials.PASSWORD,
     filename: 'empty.doc',
   },
   {
     scenario: '.jpeg',
-    username: Credentials.EMIAL,
+    username: Credentials.EMAIL,
     password: Credentials.PASSWORD,
     filename: 'empty.jpeg',
   },
   {
     scenario: '.pdf',
-    username: Credentials.EMIAL,
+    username: Credentials.EMAIL,
     password: Credentials.PASSWORD,
     filename: 'empty.pdf',
   },
