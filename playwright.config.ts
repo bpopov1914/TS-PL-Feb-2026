@@ -79,9 +79,9 @@ export default defineConfig({
     trace: 'retain-on-failure',
 
     /* Activates slow motion exectution in headed mode */
-    launchOptions: {
-      slowMo: 1250,
-    },
+    // launchOptions: {
+    //   slowMo: 1250,
+    
   },
 
   /* Configure projects for major browsers */
