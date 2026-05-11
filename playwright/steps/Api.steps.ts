@@ -112,7 +112,7 @@ export default class ApiSteps {
   @step('Verify Response Status')
   async verifyResponseStatus(status: number): Promise<void> {
     const expectedStatus = this.response.status();
-    expect(status, 'Verify token key exists in response body').toEqual(expectedStatus);
+    expect(status, 'Verify response status').toEqual(expectedStatus);
   }
 
   /**

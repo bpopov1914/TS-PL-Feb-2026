@@ -1,4 +1,5 @@
-import { APIRequestContext, APIResponse, test } from '@playwright/test';
+import { APIRequestContext, APIResponse } from '@playwright/test';
+import Logger from '@lib/tools/Logger';
 import { ItemDetails } from '@lib/resourses/enums/Interfaces';
 
 export default class InvBgApi {
@@ -37,26 +38,13 @@ export default class InvBgApi {
     };
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Details:', {
-      body:
-        'PATCH: ' +
-        url +
-        '\n' +
-        JSON.stringify(this.headers, null, 2) +
-        '\n' +
-        JSON.stringify(body, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails('POST', url, headers, body);
 
     // Make the POST request to aquire the token
     const response: APIResponse = await this.request.post(url, { headers: headers, data: body });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logResponseDetails(response);
 
     return response;
   }
@@ -70,20 +58,15 @@ export default class InvBgApi {
     const url: string = this.baseUrl + '/items';
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Details:', {
-      body: 'PATCH: ' + url + '\n' + JSON.stringify(this.headers, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails('GET', url, { ...this.headers, Authorization: `Bearer ******` });
 
     // Make the GET request to show item list
-    const response: APIResponse = await this.request.get(url, { headers: this.headers });
+    const response: APIResponse = await this.request.get(url, {
+      headers: this.headers,
+    });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logResponseDetails(response);
 
     return response;
   }
@@ -97,20 +80,16 @@ export default class InvBgApi {
     const url: string = this.baseUrl + `/items/${id}`;
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Details:', {
-      body: 'PATCH: ' + url + '\n' + JSON.stringify(this.headers, null, 2),
-      contentType: 'application/json',
+    await Logger.logRequestDetails('GET', url, {
+      ...this.headers,
+      Authorization: `Bearer ******`,
     });
 
-    // Make the GET request to show item list
+    // Make the GET request to show item details
     const response: APIResponse = await this.request.get(url, { headers: this.headers });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logResponseDetails(response);
 
     return response;
   }
@@ -148,29 +127,24 @@ export default class InvBgApi {
     };
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Details:', {
-      body:
-        'PATCH: ' +
-        url +
-        '\n' +
-        JSON.stringify(this.headers, null, 2) +
-        '\n' +
-        JSON.stringify(body, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails(
+      'POST',
+      url,
+      {
+        ...this.headers,
+        Authorization: `Bearer ******`,
+      },
+      body,
+    );
 
-    // Make the GET request to show item list
+    // Make the POST request to create the item
     const response: APIResponse = await this.request.post(url, {
       headers: this.headers,
       data: body,
     });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logResponseDetails(response);
 
     return response;
   }
@@ -211,18 +185,14 @@ export default class InvBgApi {
     };
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Details:', {
-      body:
-        'PATCH: ' +
-        url +
-        '\n' +
-        JSON.stringify(this.headers, null, 2) +
-        '\n' +
-        JSON.stringify(body, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails(
+      'PATCH',
+      url,
+      { ...this.headers, Authorization: `Bearer ******` },
+      body,
+    );
 
-    // Make the GET request to show item list
+    // Make the PATCH to update the item details:
     const response: APIResponse = await this.request.patch(url, {
       headers: this.headers,
       data: body,
@@ -240,12 +210,12 @@ export default class InvBgApi {
     const url: string = this.baseUrl + `/items/${id}`;
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Details:', {
-      body: 'PATCH: ' + url + '\n' + JSON.stringify(this.headers, null, 2),
-      contentType: 'application/json',
+    await Logger.logRequestDetails('DELETE', url, {
+      ...this.headers,
+      Authorization: `Bearer ******`,
     });
 
-    // Make the GET request to show item list
+    // Make the DELETE request to delete the item
     const response: APIResponse = await this.request.delete(url, { headers: this.headers });
 
     return response;
