@@ -198,6 +198,9 @@ export default class InvBgApi {
       data: body,
     });
 
+    // Log the response details in case of error to facilitate debugging
+    await Logger.logResponseDetails(response);
+
     return response;
   }
 
@@ -217,6 +220,9 @@ export default class InvBgApi {
 
     // Make the DELETE request to delete the item
     const response: APIResponse = await this.request.delete(url, { headers: this.headers });
+
+    // Log the response details in case of error to facilitate debugging
+    await Logger.logResponseDetails(response);
 
     return response;
   }

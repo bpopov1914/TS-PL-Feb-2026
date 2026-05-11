@@ -10,7 +10,7 @@ import { faker } from '@faker-js/faker';
   {
     scenario: 'Admin user',
     email: Credentials.EMAIL,
-    password: Credentials.PASSWORD,
+    password: Credentials.PASSWORD,  // showing password as plain textin the report is not recommended, but for demonstration purposes we will do it here using annotations, in real project we can use secrets.ts to hold sensitive data then NOT show its value here
     usingEnterKey: false,
   },
   // scenario 2

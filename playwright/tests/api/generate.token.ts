@@ -11,7 +11,9 @@ setup(
     ],
   },
   async ({ apiSteps }) => {
+    // making the API call to generate the token:
     await apiSteps.postGenerateToken(Credentials.EMAIL, Credentials.PASSWORD);
-    await apiSteps.verifyTokenExists();
+    // verifying that the token exists and saving it for future use in an environment variable:
+    await apiSteps.verifyTokenExistsAndSaveIt();
   },
 );

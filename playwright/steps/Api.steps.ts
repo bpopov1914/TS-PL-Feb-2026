@@ -120,7 +120,7 @@ export default class ApiSteps {
    * @returns {Promise<void>}
    */
   @step('Verify Element present in response body')
-  async verifyTokenExists(): Promise<void> {
+  async verifyTokenExistsAndSaveIt(): Promise<void> {
     const responseBody = await this.response.json();
     expect(responseBody.token, 'Verify token key exists in response body').toBeTruthy();
     process.env.TOKEN = responseBody.token;

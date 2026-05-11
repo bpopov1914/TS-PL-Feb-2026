@@ -6,9 +6,10 @@ import path from 'path';
 const authFile = path.resolve(process.cwd(), 'auth', 'user.json');
 
 setup('authenticate', async ({ sharedSteps, page }) => {
-  // Perform authentication steps. Replace these actions with your own.
+  // Perform authentication steps
   await sharedSteps.navigateToSite('https://st2016.inv.bg/login/');
-  await sharedSteps.login(Credentials.EMAIL, Credentials.PASSWORD); // Wait until the page receives the cookies.
-  // End of authentication steps.
+  // Make sure you wait here until the page receives the cookies, otherwise the authentication state won't be saved correctly. Inside .login method, we wait for page title which accoplishes this on this site.
+  await sharedSteps.login(Credentials.EMAIL, Credentials.PASSWORD);
+  // End of authentication steps, save the authentication state to a storage file
   await page.context().storageState({ path: authFile });
 });
