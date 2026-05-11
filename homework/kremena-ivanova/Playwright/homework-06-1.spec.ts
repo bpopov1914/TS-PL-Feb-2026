@@ -78,38 +78,38 @@ test.describe(
         const automationPage = new AutomPracticePage(page);
         await test.step('Navigate to Site', async () => {
           await page.goto(baseURL);
-          await expect(automationPage.titleHomepage, 'Page not loaded').toBeVisible();
+          await expect(automationPage.titleHomepage).toBeVisible();
         });
 
         await test.step('check radio button #2', async () => {
           await automationPage.radiobutton2.check();
           await expect
-            .soft(automationPage.radiobutton2, 'Radio button #2 is NOT checked')
+            .soft(automationPage.radiobutton2, 'Radio button #2 should be checked')
             .toBeChecked();
         });
 
         await test.step('fill the input with "Bulgaria"', async () => {
           await automationPage.inputCountries.fill('Bul');
           await expect
-            .soft(automationPage.countryOptBg, 'Autocomplete option "Bulgaria" is NOT visible')
+            .soft(automationPage.countryOptBg, 'Autocomplete option "Bulgaria" should be visible')
             .toBeVisible();
           await automationPage.countryOptBg.click();
           await expect
-            .soft(automationPage.inputCountries, 'Input is NOT filled with "Bulgaria"')
+            .soft(automationPage.inputCountries, 'Input should be filled with "Bulgaria"')
             .toHaveValue('Bulgaria');
         });
 
         await test.step('select option #2 from the dropdown', async () => {
           await automationPage.dropdownOptions.selectOption('option2');
           await expect
-            .soft(automationPage.dropdownOptions, 'option2 is NOT selected')
+            .soft(automationPage.dropdownOptions, 'option2 should be selected')
             .toHaveValue('option2');
         });
 
         await test.step('check checkbox #3', async () => {
           await automationPage.checkbox3.check();
           await expect
-            .soft(automationPage.checkbox3, 'checkbox option3 is NOT checked')
+            .soft(automationPage.checkbox3, 'checkbox option3 should be checked')
             .toBeChecked();
         });
 
@@ -118,7 +118,7 @@ test.describe(
           await expect
             .soft(
               automationPage.inputHideShowExample,
-              'input "example" is NOT hidden after clicking "Hide" button',
+              'input "example" should be hidden after clicking "Hide" button',
             )
             .not.toBeVisible();
         });
@@ -126,7 +126,7 @@ test.describe(
         await test.step('hover over the "Mouse Hover" element shows "Top" option', async () => {
           await automationPage.buttonMousehover.hover();
           await expect
-            .soft(automationPage.hoverDropdownOptionTop, '"Top" link is NOT visible after hover')
+            .soft(automationPage.hoverDropdownOptionTop, '"Top" link should be visible after hover')
             .toBeVisible();
         });
       },
