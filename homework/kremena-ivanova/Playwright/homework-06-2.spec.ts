@@ -76,20 +76,20 @@ test.describe(
         const automationPage = new AutomPracticePage(page);
         await test.step('Navigate to Site', async () => {
           await page.goto(baseURL);
-          await expect(automationPage.titleHomepage, 'Page not loaded').toBeVisible();
-          await expect(automationPage.titleTechStack, 'Page not loaded').toBeVisible();
+          await expect(automationPage.titleHomepage).toBeVisible();
+          await expect(automationPage.titleTechStack).toBeVisible();
         });
 
         await test.step('Group 1: Verify link "Products" redirects properly', async () => {
           await automationPage.linkProducts.click();
           await expect
-            .soft(page, 'NOT redirected after clicking link "Products"')
+            .soft(page, 'Should be redirected after clicking link "Products"')
             .toHaveURL(`${baseURL}#`);
         });
 
         await test.step('Group 2: Verify color of selected text', async () => {
           await expect
-            .soft(automationPage.coloredText, 'The text is NOT colored as expected')
+            .soft(automationPage.coloredText, 'The text should be colored as expected (red)')
             .toHaveCSS('color', 'rgb(255, 0, 0)');
         });
 
@@ -98,36 +98,36 @@ test.describe(
           await expect
             .soft(
               automationPage.radiobuttonStandard,
-              'Radiobutton "Standard" is not checked after click',
+              'Radiobutton "Standard" should be checked after click',
             )
             .toBeChecked();
         });
 
         await test.step('Group 4: Enter text in an input field and veirify it is correctly stored', async () => {
           await expect
-            .soft(automationPage.inputYourMessage, 'Input field is not editable')
+            .soft(automationPage.inputYourMessage, 'Input field should be editable')
             .toBeEditable();
           await automationPage.inputYourMessage.fill('La vita è bella');
           await expect
-            .soft(automationPage.inputYourMessage, 'The entered text is not as expected')
+            .soft(automationPage.inputYourMessage, 'The entered text should be as expected')
             .toHaveValue('La vita è bella');
         });
 
         await test.step('Group 5: Verify image with logo is visible', async () => {
           await expect
-            .soft(automationPage.imgLogoPlaywright, 'Playwright logo is not visible')
+            .soft(automationPage.imgLogoPlaywright, 'Playwright logo should be visible')
             .toBeVisible();
         });
 
         await test.step('Group 6: Verify element`s full text', async () => {
           await expect
-            .soft(automationPage.titleHTML, 'Element does not have the expected text')
+            .soft(automationPage.titleHTML, 'Element should have the expected text')
             .toHaveText('HTML');
         });
 
         await test.step('Group 7: Verify element`s partial text', async () => {
           await expect
-            .soft(automationPage.userEmail, 'Element does not contain the expected partial text')
+            .soft(automationPage.userEmail, 'Element should contain the expected partial text')
             .toContainText('john.doe');
         });
       },
