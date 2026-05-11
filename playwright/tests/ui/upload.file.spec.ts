@@ -1,6 +1,8 @@
 import { test } from '@tests/steps/fixtures';
 import { Credentials } from '@lib/resourses/enums/Credentials';
 
+// add 'setup' project as dependency project to the main test project 'Google Chrome' in playwright.config.ts in order to reuse authorization state in these tests:
+
 [
   {
     scenario: '.doc',
