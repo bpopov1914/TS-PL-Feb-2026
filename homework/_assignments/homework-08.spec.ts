@@ -9,9 +9,9 @@
 // verify response status
 // get the client id from the response of the create request
 
-// get the client details of the client you created 
+// get the client details of the client you created "https://api.inv.bg/v3/docs#tag/clients/operation/getClientByID"
 // verify response status
-// and verify that the created client details are correct, verify as many details as you can "https://api.inv.bg/v3/docs#tag/clients/operation/getClientByID"
+// and verify that the created client details are correct, verify as many details as you can
 
 // update the client details with 1 new value of your choice "https://api.inv.bg/v3/docs#tag/clients/operation/patchClientByID"
 // verify response status
