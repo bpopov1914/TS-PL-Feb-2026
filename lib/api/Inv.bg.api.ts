@@ -1,4 +1,5 @@
 import { APIRequestContext, APIResponse, test } from '@playwright/test';
+import { ItemDetails } from '@lib/resourses/enums/Interfaces';
 
 export default class InvBgApi {
   readonly request: APIRequestContext;
@@ -116,22 +117,34 @@ export default class InvBgApi {
 
   /**
    * Creates a new Item
+   * @type {ItemDetails} itemDetails - The details of the item to be created, including name, price, currency, price for quantity, quantity unit, limited status, catalog number, outside ID, English name, and tags.
    * @returns {Promise<APIResponse>}
    */
-  async createItem(): Promise<APIResponse> {
+  async createItem({
+    name,
+    price,
+    currency,
+    price_for_quantity,
+    quantity_unit,
+    is_limited,
+    catalog_number,
+    outside_id,
+    name_en,
+    tags,
+  }: ItemDetails): Promise<APIResponse> {
     // Prepare the data for the request
     const url: string = this.baseUrl + '/items';
     const body = {
-      name: '',
-      price: 0.25,
-      currency: 'BGN',
-      price_for_quantity: 1,
-      quantity_unit: 'кг.',
-      is_limited: false,
-      catalog_number: '46',
-      outside_id: 46,
-      name_en: 'Chewing Gum Turbo',
-      tags: ['tag_1', 'tag_2'],
+      name: name,
+      price: price,
+      currency: currency,
+      price_for_quantity: price_for_quantity,
+      quantity_unit: quantity_unit,
+      is_limited: is_limited,
+      catalog_number: catalog_number,
+      outside_id: outside_id,
+      name_en: name_en,
+      tags: tags,
     };
 
     // Log the request details and hide sensitive information in logs
@@ -163,24 +176,38 @@ export default class InvBgApi {
   }
 
   /**
-   * Sends a UPDATE item request to change item details
+   * Sends an PATCH item request to update item details
    * @returns {Promise<APIResponse>}
    */
-  async updateItem(id: number): Promise<APIResponse> {
+  async patchItem(
+    id: number,
+    {
+      name,
+      price,
+      currency,
+      price_for_quantity,
+      quantity_unit,
+      is_limited,
+      catalog_number,
+      outside_id,
+      name_en,
+      tags,
+    }: ItemDetails,
+  ): Promise<APIResponse> {
     // Prepare the data for the request
     const url: string = this.baseUrl + `/items/${id}`;
 
     const body = {
-      name: 'Дъвка Турбо',
-      price: 0.25,
-      currency: 'BGN',
-      price_for_quantity: 1,
-      quantity_unit: 'кг.',
-      is_limited: false,
-      catalog_number: '46',
-      outside_id: 46,
-      name_en: 'Chewing Gum Turbo',
-      tags: ['tag_1', 'tag_2'],
+      name: name,
+      price: price,
+      currency: currency,
+      price_for_quantity: price_for_quantity,
+      quantity_unit: quantity_unit,
+      is_limited: is_limited,
+      catalog_number: catalog_number,
+      outside_id: outside_id,
+      name_en: name_en,
+      tags: tags,
     };
 
     // Log the request details and hide sensitive information in logs
