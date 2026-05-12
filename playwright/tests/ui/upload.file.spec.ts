@@ -26,7 +26,7 @@ import { Credentials } from '@lib/resourses/enums/Credentials';
   test(
     `Upload Document File Type: ${scenario}`,
     {
-      tag: ['@ui', '@login', '@negative'],
+      tag: ['@ui', '@upload-file', '@positive'], // tags for scenario categorization
       annotation: [
         { type: 'username', description: username },
         { type: 'password', description: password },

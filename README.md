@@ -33,7 +33,7 @@
 - sets up some useful git settings
 - sets up some playwright settings for later
 
-```
+``` json
 {
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "prettier.printWidth": 200,
@@ -82,7 +82,7 @@
 - `--project chrome` -> forces tests to execute with chrome browser
 - `--retries=3`  -> failing tests will be retried multiple times until they pass, or until the maximum number of retries is reached
 - `--last-failed` -> run only the tests that failed in the last test run, first run your tests and then run them again with this flag
-- `--dry-run`  -> execute the command to check for example what tests will be selected without running them
+- `--list`  -> execute the command to check what tests will be selected without running them
 
 ## Custom execution parameters:
 - `ENV=staging npx playwright test` -> pass enviroment value through terminal command parameter "ENV" and use its base url for all tests
