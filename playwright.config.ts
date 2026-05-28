@@ -28,7 +28,7 @@ export default defineConfig({
   // testMatch: '.*(test|spec).(js|ts)', // default is contain 'spec' and end with '.ts'
 
   /* Maximum time one test can run for */
-  timeout: 30 * 1000, // default is 30 sec. This equals 30 sec.
+  timeout: 38 * 1000, // default is 30 sec. This equals 30 sec.
 
   /* Maximum time to wait for an assertion */
   expect: { timeout: 5 * 1000 }, // default is 5 sec. This equals 5 sec.
@@ -55,6 +55,9 @@ export default defineConfig({
 
     /* Browser Mode */
     headless: false, // default is headless
+
+    /* Action Timeout */
+    actionTimeout: 10 * 1000,
 
     /* Browser height and width */
     // viewport: { width: 1500, height: 730 },

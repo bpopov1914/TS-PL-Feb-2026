@@ -16,7 +16,7 @@ export default class LandingSteps extends PageFactory {
   async navigateToClientsPage() {
     await test.step('Navigate to Clients Page', async () => {
       await this.landingPage.CLIENTS_PAGE_LINK.click();
-      await expect(this.page, 'Verify page title').toHaveTitle('Клиенти - QA Ground');
+      await expect(this.page, 'Verify page title').toHaveTitle(this.clientsPage.TITLE);
     });
   }
 

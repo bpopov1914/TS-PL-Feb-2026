@@ -24,7 +24,7 @@ export default class ApiSteps {
 
   /**
    * Sends a GET items request and returns items list
-   * @returns {Promise<void>>}
+   * @returns {Promise<void>}
    */
   @step('Get Items List')
   async getItemsList(): Promise<void> {

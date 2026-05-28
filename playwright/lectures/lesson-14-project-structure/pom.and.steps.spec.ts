@@ -7,29 +7,29 @@ import { test } from '@tests/steps/fixtures';
 test(
   'Navigate to New Invoice Page',
   { tag: ['@ui', '@invoice'] },
-  async ({ sharedSteps, landintSteps }) => {
+  async ({ sharedSteps, landingSteps }) => {
     await sharedSteps.navigateToSite('https://st2016.inv.bg');
     await sharedSteps.login('karamfilovs@gmail.com', '111111');
-    await landintSteps.navigateToNewInvoicePage();
+    await landingSteps.navigateToNewInvoicePage();
   },
 );
 
 test(
   'Navigate to Clients Page',
   { tag: ['@ui', '@invoice'] },
-  async ({ sharedSteps, landintSteps }) => {
+  async ({ sharedSteps, landingSteps }) => {
     await sharedSteps.navigateToSite('https://st2016.inv.bg');
     await sharedSteps.login('karamfilovs@gmail.com', '111111');
-    await landintSteps.navigateToClientsPage();
+    await landingSteps.navigateToClientsPage();
   },
 );
 
 test(
   'Navigate to Articles Page',
   { tag: ['@ui', '@invoice'] },
-  async ({ sharedSteps, landintSteps }) => {
+  async ({ sharedSteps, landingSteps }) => {
     await sharedSteps.navigateToSite('https://st2016.inv.bg');
     await sharedSteps.login('karamfilovs@gmail.com', '111111');
-    await landintSteps.navigateToArticlesPage();
+    await landingSteps.navigateToArticlesPage();
   },
 );

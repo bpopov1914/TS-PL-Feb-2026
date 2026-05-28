@@ -9,7 +9,7 @@ export default class SharedSteps extends PageFactory {
   async navigateToSite(url: string) {
     await test.step('Navigate to Site', async () => {
       await this.page.goto(url);
-      // await expect(this.page, 'Verify page title').toHaveTitle(this.loginPage.TITLE);
+      await expect(this.page, 'Verify page title').toHaveTitle(this.loginPage.TITLE);
     });
   }
 
