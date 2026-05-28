@@ -133,7 +133,7 @@ import { faker } from '@faker-js/faker';
     clientName: faker.company.name(),
   },
 ].forEach(({ username, password, clientName }) => {
-  test.only(
+  test(
     `Create and delete client`,
     {
       tag: ['@homework-07'],
