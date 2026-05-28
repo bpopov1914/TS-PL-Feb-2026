@@ -85,11 +85,62 @@ export default class ApiSteps {
 
   /**
    * Deletes an item
+   * @type {number} id - The ID of the item to be deleted
    * @returns {Promise<void>}
    */
   @step('Delete Item')
   async deleteItem(id: number): Promise<void> {
     this.response = await this.invBgApi.deleteItem(id);
+  }
+
+  /**
+   * Sends a GET clients request and returns client list
+   * @returns {Promise<void>}
+   */
+  @step('Get Clients List')
+  async getClientsList(): Promise<void> {
+    this.response = await this.invBgApi.getClientsList();
+  }
+
+  /**
+   * Creates a new Client
+   * @type {string} clientName - The name of the client to be created.
+   * @returns {Promise<void>}
+   */
+  @step('Create Client')
+  async postCreateClient(clientName: string): Promise<void> {
+    this.response = await this.invBgApi.createClient(clientName);
+  }
+
+  /**
+   * Gets client details by ID
+   * @type {number} id - The ID of the client to retrieve details for.
+   * @returns {Promise<void>}
+   */
+  @step('Get Client Details')
+  async getClient(id: number): Promise<void> {
+    this.response = await this.invBgApi.getClient(id);
+  }
+
+  /**
+   * Sends a PATCH client request to update client details
+   * @type {number} id - The ID of the client to be updated
+   * @type {string} clientName - The updated name of the client
+   * @returns {Promise<void>}
+   */
+  @step('Update Client')
+  async patchUpdateClient(id: number, clientName: string): Promise<void> {
+    this.response = await this.invBgApi.patchClient(id, clientName);
+  }
+
+  /**
+   * Deletes a client
+   * @type {number} id - The ID of the client to be deleted
+   * @returns {Promise<void>}
+   */
+  @step('Delete Client')
+  async deleteClient(id: number): Promise<void> {
+    this.response = await this.invBgApi.deleteClient(id);
   }
 
   /**
