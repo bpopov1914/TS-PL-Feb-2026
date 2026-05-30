@@ -132,7 +132,7 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         channel: 'chrome',
         // Use prepared auth state.
-        storageState: 'auth/user.json',
+        //storageState: 'auth/user.json',
       },
       dependencies: ['generateToken'],
     },
