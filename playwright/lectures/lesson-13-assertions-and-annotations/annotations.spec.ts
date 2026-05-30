@@ -20,7 +20,7 @@ import { test, expect } from '@playwright/test';
 // page.pause(); - adds a breakpoint, pausing test execution and entering debug mode
 
 test.describe('Test Suite #1', { tag: ['@suite', '@smoke', '@regression'] }, () => {
-  test.use({ baseURL: 'https://st2016.inv.bg', colorScheme: 'light'});
+  test.use({ baseURL: 'https://st2016.inv.bg', colorScheme: 'light' });
 
   test.fail('Navigate to New Invoice Page', { tag: '@invoice' }, async ({ page }) => {
     await test.step('Navigate to Site', async () => {
@@ -37,7 +37,7 @@ test.describe('Test Suite #1', { tag: ['@suite', '@smoke', '@regression'] }, () 
 
     await test.step('Navigate New Invoice Page', async () => {
       await page.getByRole('link', { name: 'Нова Фактура', exact: true }).click();
-      await expect(page).toHaveTitle('Нова фактура - QA sdasdasdGround');
+      await expect(page).toHaveTitle('Нова фактура - QA Ground');
     });
   });
 
